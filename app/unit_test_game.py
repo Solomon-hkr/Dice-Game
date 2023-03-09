@@ -76,8 +76,6 @@ class TestGame(TestCase):
             with self.assertRaises(SystemExit):
                 game.human_continue_or_hold()
 
-
-
     def test_human_player_name(self):
         human_player = HumanPlayer("Solomon")
         self.assertEqual(human_player.name, "Solomon")
