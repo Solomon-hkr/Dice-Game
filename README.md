@@ -57,6 +57,7 @@ The computer also uses additional intellegence while playing. It holds its score
 
 
 ⛏️ Built Using
+
 The game is built by using Python programming language on Visual Studio Code.
 
 
