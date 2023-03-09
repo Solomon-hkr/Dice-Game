@@ -5,7 +5,7 @@ import os
 
 
 class Player:
-    def __init__(self, name=None): 
+    def __init__(self, name=None):
         if name is None:
             name = input("Enter your name")
         self.name = name
@@ -59,8 +59,8 @@ class HumanPlayer(Player):
     def __init__(self, name):
         super().__init__(name)
 
-    def set_name(self, new_name):    #addition
-        self.name = new_name     #addition
+    def set_name(self, new_name):
+        self.name = new_name
 
 
 
@@ -71,7 +71,7 @@ class ComputerPlayer(Player):
 
 
 class Game:
-    def __init__(self, human_name=None):   #addition
+    def __init__(self, human_name=None):
         self.human_player = HumanPlayer(human_name)
         self.computer_player = ComputerPlayer()
         self.state = "human_turn"
@@ -185,7 +185,7 @@ class Game:
     def record_result(self, name, total_score):
         # Check if the file exists
         if not os.path.exists('winners.txt'):
-            # If it does not exist, create it with default contents
+            # If it does not exist, create it with this contents
             with open('winners.txt', 'w') as f:
                 f.write("         List of Winners \n")
 
