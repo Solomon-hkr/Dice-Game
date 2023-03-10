@@ -25,7 +25,7 @@ The game can be played on cmd or any other terminal, such as Git Bash or VSC ter
     Installing
 
 Install the PIP packages that are dependencies to the project and/or the development environment. The dependencies are documented in the requirements.txt.
-DO not forget toc check that you have an active venv.
+DO not forget to check that you have an active venv.
 
     Usage
 

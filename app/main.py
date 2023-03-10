@@ -156,7 +156,7 @@ class Game:
             new_name = input("Enter your new name: ")
             self.human_player.set_name(new_name)
             print(f"\nYour name has been changed to '{new_name}'")
-        
+
         elif continue_or_hold == "s":
             print("Goodbye!")
             print()
@@ -181,24 +181,19 @@ class Game:
             self.state = "computer_turn"
 
     def record_result(self, name, total_score):
-        # Check if the file exists
+        
         if not os.path.exists('winners.txt'):
-            # If it does not exist, create it with this contents
             with open('winners.txt', 'w') as f:
                 f.write("         List of Winners \n")
 
-        # Open the file and read the current list of winners
         with open('winners.txt', 'r') as f:
             winners = f.readlines()
 
-        # Add the new winner with their score to the beginning of the list
         winners.insert(1, name + ' : ' + str(total_score) + '\n')
-        
-        # Remove the last winner if there are more than 10 winners
+
         if len(winners) > 11:
             winners.pop()
 
-        # Write the updated list of winners to the file
         with open('winners.txt', 'w') as f:
             f.writelines(winners)
 

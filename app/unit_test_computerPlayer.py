@@ -89,7 +89,8 @@ class TestComputerPlayer(unittest.TestCase):
     def test_computerplayer_is_winner_true_3(self):
         c = ComputerPlayer()
         c.total_score = 200
-        self.assertTrue(c.is_winner()) 
+        self.assertTrue(c.is_winner())
+
 
 
 
