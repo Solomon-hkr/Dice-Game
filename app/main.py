@@ -30,7 +30,7 @@ class Player:
             print("Pigged out!")
             self.total_score -= self.turn_score
             self.turn_score = 0
-            self.roll_score = 0            
+            self.roll_score = 0
             print(f"Turn score is: {self.turn_score}")
             print(f"Total score is: {self.total_score}")
             print()
@@ -63,11 +63,9 @@ class HumanPlayer(Player):
         self.name = new_name
 
 
-
 class ComputerPlayer(Player):
     def __init__(self):
         super().__init__("Computer")
-
 
 
 class Game:
@@ -79,12 +77,13 @@ class Game:
     def play_game(self):
         while True:
             if self.human_player.is_winner():
-                print(f"\n{self.human_player.name} wins with a total score of {self.human_player.total_score}!")
+                print(f"\n{self.human_player.name} wins with a score of {self.human_player.total_score}!")
                 self.record_result(self.human_player.name, self.human_player.total_score)
 
-                play_or_not = input("\nDo you want to continue playing the game? Enter 'y': To stop the game press any key: ").lower()
+                play_or_not = input("\nDo you want to continue playing the game? Enter 'y': " + 
+                            "To stop the game press any key: ").lower()
                 print()
-                if play_or_not == 'y':                    
+                if play_or_not == 'y':
                     self.human_player.turn_score = 0
                     self.human_player.total_score = 0
                     self.computer_player.turn_score = 0
@@ -97,11 +96,12 @@ class Game:
                 print(f"\n{self.computer_player.name} wins with a total score of {self.computer_player.total_score}!")
                 self.record_result(self.computer_player.name, self.computer_player.total_score)
 
-                play_or_not = input("\nDo you want to continue playing the game? Enter 'y': To stop the game press any key: ").lower()
+                play_or_not = input("\nDo you want to continue playing the game? Enter 'y': " + 
+                            "To stop the game press any key: ").lower()
                 print()
-                if play_or_not == 'y':                    
+                if play_or_not == 'y':
                     self.human_player.turn_score = 0
-                    self.human_player.total_score = 0                   
+                    self.human_player.total_score = 0
                     self.computer_player.turn_score = 0
                     self.computer_player.total_score = 0
                     self.state = "human_turn"
@@ -120,7 +120,6 @@ class Game:
             elif self.state == "computer_continue_or_hold":
                 self.computer_continue_or_hold()
 
-
     def human_turn(self):
         print(f"{self.human_player.name}'s turn")
         return_value = self.human_player.play_turn("Human")
@@ -132,9 +131,11 @@ class Game:
             self.state = "computer_turn"
 
     def human_continue_or_hold(self):
-        continue_or_hold = input("\nTo stop playing press 's'. To see list of winners press 'l'. To change your name press 'c' \n" +
-                                 "To win faster press'w'. To hold the current total score press 'h'. To continue playing press enter: ").lower()
-        print()                
+        continue_or_hold = input("\nTo stop playing press 's'. To see list of winners press 'l'." + 
+                                 " To change your name press 'c'. \nTo win faster press'w'." + 
+                                 " To hold the current total score press 'h'. " + 
+                                 "To continue playing press enter: ").lower()
+        print()
 
         if continue_or_hold == "":
             self.state = "human_turn"
@@ -161,7 +162,6 @@ class Game:
             print()
             raise SystemExit()
 
-
     def computer_turn(self):
         print("Computer's turn")
         time.sleep(2)
@@ -172,7 +172,6 @@ class Game:
         else:
             self.state = "human_turn"
 
-
     def computer_continue_or_hold(self):
         if self.computer_player.turn_score >= 15:
             self.computer_player.hold_score()
@@ -180,7 +179,6 @@ class Game:
 
         else:
             self.state = "computer_turn"
-
 
     def record_result(self, name, total_score):
         # Check if the file exists
@@ -209,7 +207,6 @@ class Game:
             print(file.read())
 
 
-
 class PlayerMain:
     def __init__(self):
         self.player_name = ""
@@ -228,15 +225,18 @@ class PlayerMain:
                 attempts += 1
                 remaining_attempts = max_attempts - attempts
                 if remaining_attempts > 0:
-                    print(f"Name should be only alphabets. Please try again. {remaining_attempts} attempts remaining.")
+                    print(f"Name should be only alphabets. {remaining_attempts}" + 
+                        " attempts remaining. Please try again. ")
                 else:
-                    print(f"You have exceeded the maximum number of attempts ({max_attempts}). Please start over again.")
+                    print(f"You have exceeded the maximum number of attempts ({max_attempts})." +
+                        " Please start over again.")
                     raise SystemExit()
 
     def main(self):
         self.get_player_name()
         my_game = Game(self.player_name)
         my_game.play_game()
+
 
 
 

@@ -58,7 +58,3 @@ The computer also uses additional intelligence while playing the game. It holds 
 ⛏️ Built Using
 
 The game is built by using Python programming language on Visual Studio Code.
-
-
-
-

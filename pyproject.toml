@@ -1,5 +1,5 @@
-]
-The external packages our project depends on. 
+# All the external packages our project depends on.
+# Versioning can also be specified
 dependencies = [
   'flake8',
   'pylint',
@@ -7,3 +7,11 @@ dependencies = [
   'pdoc',
   'build'
 ]
+
+# Dependencies required by the build system
+[build-system]
+requires = [
+  'setuptools>=46.1.3',
+  'wheel>=0.34.2'
+]
+build-backend = 'setuptools.build_meta'

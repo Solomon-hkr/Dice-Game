@@ -19,13 +19,8 @@ class TestPlayer(unittest.TestCase):
 
 
     def test_play_turn_pigged_out(self):
-    # Force the player to roll a 1
         self.player.roll_dice = lambda: 1
-    
-    # Call the play_turn() method with the "Human" argument
         result = self.player.play_turn("Human")
-    
-    # Check that the result is false
         self.assertFalse(result)
 
     def test_hold_score(self):

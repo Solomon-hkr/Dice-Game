@@ -55,7 +55,7 @@ class TestComputerPlayer(unittest.TestCase):
 
     def test_computerplayer_play_turn_rolls_not_one(self):
         c = ComputerPlayer()
-        random.seed(1) # force the dice roll to be 3
+        random.seed(1)
         self.assertTrue(c.play_turn("Computer"))
 
     def test_computerplayer_hold_score(self):

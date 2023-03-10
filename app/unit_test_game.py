@@ -16,7 +16,7 @@ class TestGame(TestCase):
         self.assertEqual(game.human_player.turn_score, 0)
         self.assertEqual(game.human_player.total_score, 0)
         self.assertEqual(game.state, "computer_turn")
-    
+
     @patch('random.randint')
     def test_human_turn_roll_score_2(self, mock_randint):
         mock_randint.return_value = 2
@@ -114,6 +114,7 @@ class TestGame(TestCase):
         player = Player("Test")
         player.total_score = 49
         self.assertFalse(player.is_winner())
+
 
 
 if __name__ == "__main__":

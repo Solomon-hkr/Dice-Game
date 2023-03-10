@@ -1,7 +1,11 @@
          List of Winners 
+Solomon : 51
+Computer : 51
+Solomon : 52
+Computer : 50
+Sola : 54
 Solomon : 52
 Computer : 53
 Computer : 52
 Computer : 53
 John : 52
-Sol : 52
